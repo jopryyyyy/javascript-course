@@ -187,5 +187,86 @@
 // // 3. Log results to console
 // console.log(BMIMark, BMIJohn, markHigherBMI);
 
+// The Old Way: String Concatenation
+////////////////////////////////////
+// Strings and Template Literals
+const firstName = "Jonas";
+const job = "teacher";
+const birthYear = 1991;
+const year = 2037;
+
+const jonas =
+  "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
+console.log(jonas);
+
+const jonasnew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(jonasnew);
+console.log(`Math works: ${2 + 3} equals five`);
+console.log(`Comparisons too: ${5 > 3}`); 
+
+console.log(`Just a regular string...`);
+
+////////////////////////////////////
+// Taking Decisions: if / else Statements
+const age = 15;
+
+if (age >= 18) {
+  console.log("Sarah can start driving license 🚗");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+}
+
+////////////////////////////////////
+// Truthy and Falsy Values
+
+// 5 falsy values: 0, '', undefined, null, NaN
+console.log(Boolean(0)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean("Jonas")); // true
+console.log(Boolean({})); // true (empty object)
+console.log(Boolean("")); // false (empty string)
+
+const money = 100;
+if (money) {
+  console.log("Don't spend it all ;)");
+} else {
+  console.log("You should get a job!");
+}
+
+let height = 0; // This is a valid height!
+if (height) {
+  console.log("YAY! Height is defined");
+} else {
+  console.log("Height is UNDEFINED"); // This runs even though height IS defined!
+}
+
+// Better approach for checking if defined:
+if (height !== undefined) {
+  console.log("Height is defined");
+}
+
+////////////////////////////////////
+// Coding Challenge #2
+
+// Reuse your BMI calculation from Challenge #1
+// const massMark = 78;
+// const heightMark = 1.69;
+// const massJohn = 92;
+// const heightJohn = 1.95;
+
+// const BMIMark = massMark / heightMark ** 2;
+// const BMIJohn = massJohn / (heightJohn * heightJohn);
+// console.log(BMIMark, BMIJohn);
+
+// // Your if/else statement here:
+// if (BMIMark > BMIJohn) {
+//   console.log(`HOORAY!!! The BMI of Mark (${BMIMark}) is higher than John's (${BMIJohn})!`);
+// } else {
+//   console.log(`John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark})!`);
+// }
+
+// // Compare BMIs and create intelligent messages
+// // Use template literals for beautiful output
 
 
