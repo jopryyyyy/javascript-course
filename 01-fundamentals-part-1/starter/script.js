@@ -489,9 +489,39 @@
 // // console.log("23" / "2");
 // // console.log("23" * "2");
 
-// // //Strict Equality (===) - The Professional Way
-// // //////////////////////////////////////////////
-// // //Equality Operators: == vs. ===
+// //Tricky Examples
+// // let n = "1" +1;
+// // n = n - 1;
+// // console.log(n);
+
+// // console.log(2 + 3 + 4 + "5");
+// // console.log("10" - "4" - "3" - 2 + "5");
+
+// // Exercise 1: Conversion Detective
+// Predict the output, then test:
+console.log("5" + 2); // Your guess: "52"
+console.log("5" - 2); // Your guess: 3
+console.log("5" * 2); // Your guess: 10
+console.log("5" / 2); // Your guess: 2.5
+
+// Convert these explicitly:
+const userAge = "25"; // Convert to number
+console.log(Number(userAge)); // 25 (number)
+
+const userScore = 95; // Convert to string
+console.log(String(userScore)); // "95" (string)
+
+// Exercise 2: Fix the Bug
+const num1 = prompt("First number:"); // Returns string!
+const num2 = prompt("Second number:"); // Returns string!
+
+const sum = Number(num1) + Number(num2);
+
+console.log(`Sum: ${sum}`);
+
+// //Strict Equality (===) - The Professional Way
+// //////////////////////////////////////////////
+// //Equality Operators: == vs. ===
 
 // // const age = "18";
 // // if (age === 18) console.log("You just became an adult :D (strict)");
@@ -501,16 +531,11 @@
 // // console.log("18" == 18); // true
 // // console.log(18 === 18);
 
-// // //Tricky Examples
-// // let n = "1" +1;
-// // n = n - 1;
-// // console.log(n);
 
-// // console.log(2 + 3 + 4 + "5");
-// // console.log("10" - "4" - "3" - 2 + "5");
 
-// // //Loose Equality (==)- The Dangerous One
-// // ////////////////////////////////////////
+
+// //Loose Equality (==)- The Dangerous One
+// ////////////////////////////////////////
 // // console.log("0" == 0);
 // // console.log (0 == false);
 // // console.log("0" == false);
@@ -519,7 +544,7 @@
 // // console.log("" == 0);
 // // console.log("  " == 0);
 
-// // //Best Practice Example
+// //Best Practice Example
 // // const favourite = Number(prompt("What's your favourite number?"));
 // // console.log(favourite);
 // // console.log(typeof favourite);
@@ -534,10 +559,30 @@
 // //   console.log("Number is not 23 or 7 or 9");
 // // }
 
-// // //Not-equal operator
+// //Not-equal operator
 // // if (favourite !== 23) console.log("Why not 23?");
 
-// // ///////////////////////////////////////////////
+// // Exercise 1: Equality Detective
+// // Test these comparisons - predict first, then run:
+// console.log(5 === "5"); // false
+// console.log(5 == "5");  // true
+// console.log(true === 1); // false
+// console.log(true == 1);  // true
+// console.log(false === 0); // false
+// console.log(false == 0);  // true
+
+// // Exercise 2: Fix the Login System
+
+// const username = "admin";
+// const password = "1234";
+
+// if (username === "admin" && password === "1234") {
+//   console.log("Welcome admin!");
+// } else {
+//   console.log("Access denied");
+// }
+
+// ///////////////////////////////////////////////
 // // console.log("=== LOGICAL OPERATORS ===");
 
 // // //Basic Logical Operators
@@ -568,6 +613,33 @@
 // // } else {
 // //   console.log("Not approved to drive.");
 // // }
+
+// // Exercise 1: Club Entry System
+// // Create a club entry system with these rules:
+// // Entry allowed if: (age >= 21 AND hasID) OR isVIP
+
+// const age = 19;
+// const hasID = true;
+// const isVIP = false;
+
+// if ((age >= 21 && hasID) || isVIP) {
+//   console.log("Welcome to the club!");
+// } else {
+//   console.log("Sorry, you cannot enter");
+// }
+
+// // Exercise 2: Weather Advisor
+// const temperature = 25; 
+// const isRaining = false;
+// const isWindy = true;
+
+// if (temperature >= 20 && temperature <= 30 && !isRaining && !isWindy) {
+//   console.log("Perfect day!");
+// } else if (temperature >= 15 && temperature <= 35 && !isRaining) {
+//   console.log("Good day!");
+// } else {
+//   console.log("Stay inside");
+// }
 
 // // Ternary Operators (Elegant One-Liners)
 // // ////////////////////////////////////////////////////////////
@@ -603,8 +675,36 @@
 // //   grade = "B";
 // // }
 
-// // //////////////////////////////////
-// // Coding Challenge #4
+// // Exercise: Status Massage
+// // 1. Login status
+// const isLoggedIn = true;
+// let welcomeMessage = isLoggedIn ? "Welcome back!" : "Please sign in";
+// console.log(welcomeMessage);
+
+// // 2. Price with discount
+// const isPremium = false;
+// let price = isPremium ? 100 * 0.8 : 100;
+// console.log(price);
+
+// // Exercise 2: Smart Responses
+// const score = 85;
+// const weather = "sunny";
+// const battery = 15;
+
+// // Score message
+// const scoreMessage = `Your score: ${score} (${score >= 75 ? "Passed" : "Failed"})`;
+// console.log(scoreMessage);
+
+// // Weather message
+// const weatherMessage = `Weather is ${weather} (${weather === "sunny" ? "Great for outdoor activities" : "Stay inside"})`;
+// console.log(weatherMessage);
+
+// // Battery message
+// const batteryMessage = `Battery: ${battery}% (${battery < 20 ? "Low battery warning" : "Battery OK"})`;
+// console.log(batteryMessage);
+
+// //////////////////////////////////
+// // Coding Challenge #4: Tip Calculator
 
 // // const bill = 275; // Test with 275, 40, and 430
 
