@@ -1,82 +1,129 @@
-// let js = "amazing";
-// console.log(40 + 8 + 23 - 10);
+let js = "amazing";
+console.log(40 + 8 + 23 - 10);
 
-// console.log("=== VARIABLES ===");
+console.log("=== VARIABLES ===");
 
-// let firstName = "Jonas";
-// console.log(firstName);
+let firstName = "Jonas";
+console.log(firstName);
 
-// let age = 30;
-// age = 31; // We can change let variables
-// console.log(age);
+let age = 30;
+age = 31; // We can change let variables
+console.log(age);
 
-// const birthYear = 1991;
-// console.log(birthYear);
+const birthYear = 1991;
+console.log(birthYear);
 
-// // birthYear = 1990; // ❌ This would cause an error!
+// birthYear = 1990; // ❌ This would cause an error!
 
-// const PI = 3.1415;
-// console.log(PI);
+const PI = 3.1415;
+console.log(PI);
 
-// var job = "programmer";
-// job = "teacher";
-// console.log(job);
+var job = "programmer";
+job = "teacher";
+console.log(job);
 
-// // Note: Modern JavaScript uses let and const
-// // You'll see var in old code, but avoid it
+// Note: Modern JavaScript uses let and const
+// You'll see var in old code, but avoid it
 
-// const country = "Portugal";
-// const language = "Portuguese";
-// const population = 10;
+const country = "Portugal";
+const language = "Portuguese";
+const population = 10;
 
-// let age = 25;
-// age = 26; // This will change
+let age = 25;
+age = 26; // This will change
 
-// // ✅ Good names
-// let firstName = "Sarah";
-// let myCurrentJob = "teacher";
-// let PI = 3.1415; // Constants in UPPERCASE
+// ✅ Good names
+let firstName = "Sarah";
+let myCurrentJob = "teacher";
+let PI = 3.1415; // Constants in UPPERCASE
 
-// // ❌ Bad names (will cause errors)
-// // let 3years = 3; // Can't start with number
-// // let jonas&matilda = "JM"; // No special characters
-// // let new = 27; // Can't use reserved words
+// ❌ Bad names (will cause errors)
+// let 3years = 3; // Can't start with number
+// let jonas&matilda = "JM"; // No special characters
+// let new = 27; // Can't use reserved words
 
-// console.log("=== DATA TYPES ===");
+console.log("=== DATA TYPES ===");
 
-// // Number (integers and decimals)
-// let age = 23;
-// console.log(age);
-// console.log(typeof age); // "number"
+// Number (integers and decimals)
+let age = 23;
+console.log(age);
+console.log(typeof age); // "number"
 
-// // String (text in quotes)
-// let firstName = "Jonas";
-// console.log(firstName);
-// console.log(typeof firstName); // "string"
+// String (text in quotes)
+let firstName = "Jonas";
+console.log(firstName);
+console.log(typeof firstName); // "string"
 
-// // Boolean (true or false)
-// let javascriptIsFun = true;
-// console.log(javascriptIsFun);
-// console.log(typeof javascriptIsFun); // "boolean"
+// Boolean (true or false)
+let javascriptIsFun = true;
+console.log(javascriptIsFun);
+console.log(typeof javascriptIsFun); // "boolean"
 
-// // Undefined (no value assigned yet)
-// let year;
-// console.log(year); // undefined
-// console.log(typeof year); // "undefined"
+// Undefined (no value assigned yet)
+let year;
+console.log(year); // undefined
+console.log(typeof year); // "undefined"
 
-// // Start as a number
-// let dynamicVariable = 23;
-// console.log(dynamicVariable, typeof dynamicVariable); // 23, "number"
+// Start as a number
+let dynamicVariable = 23;
+console.log(dynamicVariable, typeof dynamicVariable); // 23, "number"
 
-// //Change to a string
-// dynamicVariable = "Now I'm a string!";
-// console.log(dynamicVariable, typeof dynamicVariable); // "Now I'm a string!", "string"
+//Change to a string
+dynamicVariable = "Now I'm a string!";
+console.log(dynamicVariable, typeof dynamicVariable); // "Now I'm a string!", "string"
 
-// //Change to a boolean
-// dynamicVariable = true;
-// console.log(dynamicVariable, typeof dynamicVariable); // true, "boolean"
+//Change to a boolean
+dynamicVariable = true;
+console.log(dynamicVariable, typeof dynamicVariable); // true, "boolean"
 
-///////////////////////////////////////////////////////////////////////////////
+console.log("=== EXERCISES ===");
+
+//Exercise 1 
+// 1. Your first name (const)
+const firstName = "Jeoffry";
+
+// 2. Your age (let - it changes every year!)
+let age = 20;
+
+// 3. Your favorite number (const)
+const favoriteNumber = 7;
+
+// 4. Whether you like JavaScript so far (boolean)
+let likesJavaScript = true;
+
+// Log each variable and its type
+console.log(firstName, typeof firstName);        // Jeoffry string
+console.log(age, typeof age);                    // 20 number
+console.log(favoriteNumber, typeof favoriteNumber); // 7 number
+console.log(likesJavaScript, typeof likesJavaScript); // true boolean
+
+//Exercise 2
+// 1. Create a let variable called 'score' with value 100
+let score = 100;
+
+// 2. Log it to the console
+console.log("Score is:", score);
+
+// 3. Change it to 150
+score = 150;
+
+// 4. Log it again
+console.log("Score is now:", score);
+
+// 5. Try the same with const - what happens?
+const constScore = 100;
+console.log("Const Score is:", constScore);
+
+constScore = 150; // This will cause an error
+
+//Exercise 3
+// Use typeof to check the data type of these values:
+console.log(typeof 42);        // number
+console.log(typeof "Hello");   // string
+console.log(typeof true);      // boolean
+console.log(typeof undefined); // undefined
+
+/////////////////////////////////////////////////////////////////////////////
 
 // Basic Operators - Math Operators
 // console.log("=== MATH OPERATORS ===");
@@ -188,7 +235,7 @@
 // console.log(BMIMark, BMIJohn, markHigherBMI);
 
 // The Old Way: String Concatenation
-////////////////////////////////////
+// //////////////////////////////////
 // Strings and Template Literals
 // const firstName = "Jonas";
 // const job = "teacher";
@@ -246,7 +293,7 @@
 //   console.log("Height is defined");
 // }
 
-////////////////////////////////////
+// //////////////////////////////////
 // Coding Challenge #2
 
 // Reuse your BMI calculation from Challenge #1
@@ -269,7 +316,7 @@
 // // Compare BMIs and create intelligent messages
 // // Use template literals for beautiful output
 
-////////////////////////////////////////////////////
+// //////////////////////////////////////////////////
 // console.log("=== TYPE CONVERSION AND COERCION ===");
 
 // //Manual Type Conversion
@@ -336,7 +383,7 @@
 // //Not-equal operator
 // if (favourite !== 23) console.log("Why not 23?");
 
-/////////////////////////////////////////////////
+// ///////////////////////////////////////////////
 // console.log("=== LOGICAL OPERATORS ===");
 
 // //Basic Logical Operators
@@ -369,7 +416,7 @@
 // }
 
 // Ternary Operators (Elegant One-Liners)
-//////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////
 
 // Basic Ternary Syntax
 // const age = 23;
@@ -402,7 +449,7 @@
 //   grade = "B";
 // }
 
-////////////////////////////////////
+// //////////////////////////////////
 // Coding Challenge #4
 
 // const bill = 275; // Test with 275, 40, and 430
