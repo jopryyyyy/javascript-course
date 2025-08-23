@@ -127,8 +127,8 @@
 
 // Basic Operators - Math Operators
 // console.log("=== MATH OPERATORS ===");
-
 // const now = 2037;
+
 // const ageJonas = now - 1991;
 // const ageSarah = now - 2018;
 // console.log(ageJonas, ageSarah); // 46, 19
@@ -142,7 +142,7 @@
 // console.log("Division:", 15 / 3);
 // console.log("Exponentiation:", 2 ** 3);
 
-// String Concatenation
+// // String Concatenation
 
 // const firstName = "Jonas";
 // const lastName = "Schemdtmann";
@@ -152,6 +152,7 @@
 // console.log("I am" + 25 + "years old");
 
 // // Assignment Operators
+
 // console.log("=== ASSIGNMENT OPERATORS ===");
 
 // let x = 10 + 5;
@@ -160,19 +161,38 @@
 // x += 10;
 // console.log("After += 10:", x);
 
-// x *= 4;
+//  x *= 4;
 // console.log("After *= 4:", x);
 
 // x /= 2;
 // console.log("After /= 2:", x);
 
-// x++;
+//  x++;
 // console.log("After ++:", x);
 
 // x--;
 // x--;
 // console.log("After x-- twice:", x);
 
+// // Exercise: Score Calculator
+// // 1. Create a variable 'score' with value 100
+// let score = 100;
+
+// // 2. Add 50 using +=
+// score += 50;
+
+// // 3. Multiply by 2 using *=
+// score *= 2;
+
+// // 4. Subtract 25 using -=
+// score -= 25;
+
+// // 5. Use ++ twice
+// score++;
+// score++;
+
+// // 6. Log the final result 
+// console.log(score); // 377
 
 // // Comparison Operators
 // console.log("=== COMPARISON OPERATORS ===");
@@ -197,7 +217,24 @@
 // console.log("Complex comparison:");
 // console.log(now - 1991 > now -2018);
 
-// Operator Precedence
+// // Exercise: Age Verification
+// const myAge = 25;
+
+// // 1. Compare your age to 18 (>=)
+// console.log(myAge >= 18); // true if age is 18 or above
+
+// // 2. Check if 100 is greater than 99
+// console.log(100 > 99); // true
+
+// // 3. Store a comparison result in a variable
+// let isAdult = myAge >= 18;
+// console.log(isAdult);
+
+// // 4. Try comparing the result of two calculations
+// console.log(10 + 5 > 20 - 3); // 15 > 17 - false
+
+
+// // Operator Precedence
 // console.log("=== OPERATOR PRECEDENCE ===");
 
 // const now = 2037;
@@ -234,17 +271,17 @@
 // // 3. Log results to console
 // console.log(BMIMark, BMIJohn, markHigherBMI);
 
-// // The Old Way: String Concatenation
-// // //////////////////////////////////
-// // Strings and Template Literals
-// // const firstName = "Jonas";
-// // const job = "teacher";
-// // const birthYear = 1991;
-// // const year = 2037;
+// The Old Way: String Concatenation
+//////////////////////////////////
+// Strings and Template Literal
+// const firstName = "Jonas";
+// const job = "teacher";
+// const birthYear = 1991;
+// const year = 2037;
 
-// // const jonas =
-// //   "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
-// // console.log(jonas);
+// const jonas =
+//   "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
+// console.log(jonas);
 
 // // const jonasnew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
 // // console.log(jonasnew);
