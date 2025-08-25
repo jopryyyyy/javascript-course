@@ -499,25 +499,25 @@
 
 // // Exercise 1: Conversion Detective
 // Predict the output, then test:
-console.log("5" + 2); // Your guess: "52"
-console.log("5" - 2); // Your guess: 3
-console.log("5" * 2); // Your guess: 10
-console.log("5" / 2); // Your guess: 2.5
+// console.log("5" + 2); // Your guess: "52"
+// console.log("5" - 2); // Your guess: 3
+// console.log("5" * 2); // Your guess: 10
+// console.log("5" / 2); // Your guess: 2.5
 
-// Convert these explicitly:
-const userAge = "25"; // Convert to number
-console.log(Number(userAge)); // 25 (number)
+// // Convert these explicitly:
+// const userAge = "25"; // Convert to number
+// console.log(Number(userAge)); // 25 (number)
 
-const userScore = 95; // Convert to string
-console.log(String(userScore)); // "95" (string)
+// const userScore = 95; // Convert to string
+// console.log(String(userScore)); // "95" (string)
 
-// Exercise 2: Fix the Bug
-const num1 = prompt("First number:"); // Returns string!
-const num2 = prompt("Second number:"); // Returns string!
+// // Exercise 2: Fix the Bug
+// const num1 = prompt("First number:"); // Returns string!
+// const num2 = prompt("Second number:"); // Returns string!
 
-const sum = Number(num1) + Number(num2);
+// const sum = Number(num1) + Number(num2);
 
-console.log(`Sum: ${sum}`);
+// console.log(`Sum: ${sum}`);
 
 // //Strict Equality (===) - The Professional Way
 // //////////////////////////////////////////////
