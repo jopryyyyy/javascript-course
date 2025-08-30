@@ -890,5 +890,112 @@ console.log("=== DOM MANIPULATION AND INTERACTIVITY ===");
 // Final Project Interactive Score Tracker
 // console.log("=== Final Project: INTERACTIVE SCORE TRACKER ===");
 
+// Game State Object
+// Cache elements
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => document.querySelectorAll(s);
+const winningScoreInput = $("#winning-score");
+const DEFAULT_WINNING_SCORE = parseInt(winningScoreInput?.value) || 5;
+
+// Game State Object
+const gameState = {
+  scores: [0, 0],                
+  winningScore: DEFAULT_WINNING_SCORE,
+  gameActive: true,              
+
+  // points per player
+  addPoint(player) {
+    if (!this.gameActive) return;
+    this.scores[player - 1]++;
+    this.updateDisplay();
+    if (this.scores[player - 1] >= this.winningScore) this.showWinner(player);
+  },
+
+  // show winner 
+  showWinner(player) {
+    this.gameActive = false;
+    const winnerEl = $(".winner");
+    const winnerNameEl = $(".winner-name");
+    winnerNameEl.textContent = `Player ${player}`;
+    winnerEl.classList.remove("hidden");
+    $(`.player-${player}`)?.classList.add("winner");
+    const loser = player === 1 ? 2 : 1;
+    $(`.player-${loser}`)?.classList.add("loser");
+
+    $$(".btn-add").forEach((b) => (b.disabled = true));
+  },
+
+  // reset game
+  resetGame({ toDefault = false } = {}) {
+    this.scores = [0, 0];
+    this.gameActive = true;
+
+    if (toDefault) {
+      this.winningScore = DEFAULT_WINNING_SCORE;
+      if (winningScoreInput) winningScoreInput.value = this.winningScore;
+    }
+
+    // update target score
+    $(".target").textContent = this.winningScore;
+
+    // reset score 
+    $$(".score").forEach((el) => (el.textContent = 0));
+
+    // hide winner box and clear text
+    $(".winner")?.classList.add("hidden");
+    const nameEl = $(".winner-name");
+    if (nameEl) nameEl.textContent = "";
+
+    // remove any game-result classes and visibility flags
+    $$(".player").forEach((p) => p.classList.remove("winner", "loser", "hidden"));
+
+    // re-enable buttons
+    $$(".btn-add").forEach((b) => (b.disabled = false));
+  },
+
+  // update scores display
+  updateDisplay() {
+    $("#score-1").textContent = this.scores[0];
+    $("#score-2").textContent = this.scores[1];
+  },
+};
+
+// Button: add point
+$$(".btn-add").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const player = parseInt(btn.dataset.player);
+    gameState.addPoint(player);
+  });
+});
+
+// Button: hard reset (full start state)
+$("#btn-reset").addEventListener("click", () => {
+  gameState.resetGame({ toDefault: true });
+});
+
+// Winning score
+winningScoreInput.addEventListener("change", (e) => {
+  const v = parseInt(e.target.value);
+  gameState.winningScore = Number.isFinite(v) && v > 0 ? v : DEFAULT_WINNING_SCORE;
+  $(".target").textContent = gameState.winningScore;
+  gameState.resetGame(); // soft reset (preserves chosen target)
+});
+
+// Keyboard: q (P1), p (P2), r (reset)
+document.addEventListener("keydown", (e) => {
+  // ignore auto-repeat so holding the key doesn't spam points
+  if (e.repeat) return;
+
+  const key = e.key.toLowerCase();
+  if (key === "q") gameState.addPoint(1);
+  else if (key === "p") gameState.addPoint(2);
+  else if (key === "r") gameState.resetGame({ toDefault: true });
+});
+
+
+
+
+
+
 
 
