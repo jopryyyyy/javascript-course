@@ -43,7 +43,7 @@ console.log('Current Score:', scoreEl.textContent);
 
 // Modifying element content
 messageEl.textContent = 'Hello from Javascript!';
-scoreEl.textContent =100;
+scoreEl.textContent =20;
 
 console.log('Elements updated!');
 
@@ -87,7 +87,7 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 console.log('Secret number:', secretNumber); 
 
 // Step 2: Track the player's score
-let score = 100;
+let score = 20;
 
 // Step 3: Track the high score
 let highscore = 0;
@@ -232,6 +232,7 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = '🎉 You won!';
     document.querySelector('.guess').disabled = true;
     document.querySelector('.check').disabled = true;
+    document.body.style.backgroundColor = 'green';
   }
 
   // Lose condition
@@ -240,6 +241,7 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('.guess').disabled = true;
     document.querySelector('.check').disabled = true;
+    document.body.style.backgroundColor = 'red';
   }
 });
 
@@ -265,3 +267,71 @@ console.log('✅ Win/lose conditions implemented');
 console.log('✅ Game restart functionality working');
 console.log('✅ Complete game experience ready');
 console.log('Test: Try to win, try to lose, then restart!');
+
+////////////////////////////////////////////////////////////////////////////////
+// ADVANCED GAME FEATURES AND POLISH
+// Section 1: Visual Feedback and Style Changes
+////////////////////////////////////
+// Visual feedback - change styles based on game state
+
+// WIN: set background to green
+if (guess === secretNumber) {
+  // ... your existing win logic ...
+  document.body.style.backgroundColor = 'green';
+}
+
+// LOSE: set background to red (place inside your lose condition)
+if (score < 1) {
+  // ... your existing lose logic ...
+  document.body.style.backgroundColor = 'red';
+}
+
+// RESTART: clear inline background so CSS default applies (inside the Again! handler)
+document.querySelector('.again').addEventListener('click', function () {
+  // ... your existing restart logic ...
+  document.body.style.backgroundColor = '';
+});
+
+// Section 2: Input Validation & Error Handling
+////////////////////////////////////
+// Input validation - check for valid input
+
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = Number(document.querySelector('.guess').value);
+
+  // 1) Missing input
+  if (!guess) {
+    document.querySelector('.message').textContent = 'No number!';
+    return; // stop here
+  }
+
+  // 2) Out of range
+  if (guess < 1 || guess > 20) {
+    document.querySelector('.message').textContent =
+      'Number must be between 1 and 20!';
+    return; // stop here
+  }
+
+  // ... your existing game logic (win / too high / too low / update score / lose) ...
+});
+
+// Section 3: Final Polish & Professional Touches
+////////////////////////////////////
+// Final polish - professional finishing touches
+
+// In WIN block
+if (guess === secretNumber) {
+  // ... existing win logic ...
+  document.querySelector('.message').textContent = '🎉 Game Over!';
+  document.querySelector('.guess').value = '';
+}
+
+// In LOSE block
+if (score < 1) {
+  // ... existing lose logic ...
+  document.querySelector('.message').textContent = '💀 Game Over!';
+  document.querySelector('.guess').value = '';
+}
+
+// In RESTART handler
+// (Already resetting background, also ensure inputs/score/message are reset)
