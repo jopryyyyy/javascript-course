@@ -335,3 +335,5 @@ if (score < 1) {
 
 // In RESTART handler
 // (Already resetting background, also ensure inputs/score/message are reset)
+
+////////////////////////////////////////////////////////////////////////////////////
