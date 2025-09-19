@@ -1,8 +1,8 @@
 // Modal Development Hour 1 - Foundation & Class Toggling
 
-// 'use strict';
+'use strict';
 
-// console.log("=== MODAL DEVELOPMENT: FOUNDATION & CLASS TOGGLING ===");
+console.log("=== MODAL DEVELOPMENT: FOUNDATION & CLASS TOGGLING ===");
 
 // /*
 // What We're Building Today:
@@ -19,79 +19,53 @@
 // - DRY (Don't Repeat Yourself) principles
 // */
 
-// console.log('Modal project ready!');
+console.log('Modal project ready!');
 
-// // Section 1: DOM Element Selection & Caching
-// // First, add strict mode at the top
+// Section 1: DOM Element Selection & Caching
+// First, add strict mode at the top
 
-// // Select the modal element
-// const modalEl = document.querySelector('.modal');
+// Select the modal element
+const modalEl = document.querySelector('.modal');
 
-// // Select the overlay element
-// const overlayEl = document.querySelector('.overlay');
+// Select the overlay element
+const overlayEl = document.querySelector('.overlay');
 
-// // Select the close button element
-// const btnCloseModalEl = document.querySelector('.close-modal');
+// Select the close button element
+const btnCloseModalEl = document.querySelector('.close-modal');
 
-// // Select ALL the open buttons using querySelectorAll
-// const btnsOpenModalEl = document.querySelectorAll('.show-modal');
+// Select ALL the open buttons using querySelectorAll
+const btnsOpenModalEl = document.querySelectorAll('.show-modal');
 
-// // Verify our selections worked correctly
-// console.log('Open buttons:', btnsOpenModalEl); 
+// Verify our selections worked correctly
+console.log('Open buttons:', btnsOpenModalEl); 
 
 // // Section 2: Open/Close Helpers with Class Toggling
-// // Create our openModal function
-// const openModal = function () {
-//     // Remove the hidden class from modal to make it visible
-//     modalEl.classList.remove('hidden');
-//     // Remove the hidden class from overlay to show dark background
-//     overlayEl.classList.remove('hidden');
-// };
+// Create our openModal function
+const openModal = function () {
+    // Remove the hidden class from modal to make it visible
+    modalEl.classList.remove('hidden');
+    // Remove the hidden class from overlay to show dark background
+    overlayEl.classList.remove('hidden');
+};
 
-// // Creating closeModal function
-// const  closeModal = function () {
-//     // Add the hidden class back to overlay to hide dark background
-//     overlayEl.classList.add('hidden');
-// };
+// Creating closeModal function
+const  closeModal = function () {
+    // Add the hidden class back to overlay to hide dark background
+    overlayEl.classList.add('hidden');
+};
 
 // // Section 3: Connecting Everything with Event Listeners
 
-// // Wiring Up the Open Buttons
-// // Attach openModal function to all show buttons
-// btnsOpenModalEl.forEach(btn => btn.addEventListener('click', openModal));
+// Wiring Up the Open Buttons
+// Attach openModal function to all show buttons
+btnsOpenModalEl.forEach(btn => btn.addEventListener('click', openModal));
 
-// // Wiring Up the Close Actions
-// // Attach closeModal function to close button
-// btnCloseModalEl.addEventListener('click', closeModal);
+// Wiring Up the Close Actions
+// Attach closeModal function to close button
+btnCloseModalEl.addEventListener('click', closeModal);
 
-// // Attach closeModal function to overlay click
-// overlayEl.addEventListener('click', closeModal);
-
-// Final Verification
-
-// 'use strict';
-
-// // Selections
-// const modalEl = document.querySelector('.modal');
-// const overlayEl = document.querySelector('.overlay');
-// const btnCloseModalEl = document.querySelector('.close-modal');
-// const btnsOpenModalEl = document.querySelectorAll('.show-modal');
-
-// // Helper functions
-// const openModal = function () {
-//   modalEl.classList.remove('hidden');
-//   overlayEl.classList.remove('hidden');
-// };
-
-// const closeModal = function () {
-//   modalEl.classList.add('hidden');
-//   overlayEl.classList.add('hidden');
-// };
-
-// // Event listeners
-// btnsOpenModalEl.forEach(btn => btn.addEventListener('click', openModal));
-// btnCloseModalEl.addEventListener('click', closeModal);
-// overlayEl.addEventListener('click', closeModal);
+// Attach closeModal function to overlay click
+overlayEl.addEventListener('click', closeModal);
 
 ////////////////////////////////////////////////////////////////////////
 // Modal Development Hour 2 - Keyboard Events & Advanced UX
@@ -114,11 +88,11 @@ Key Concepts:
 
 // console.log('Enhanced modal development ready!');
 
-// // Section 1: Keyboard Event Fundamentals
-// // Let's start by understanding keyboard events
+// Section 1: Keyboard Event Fundamentals
+// Let's start by understanding keyboard events
 // console.log('Keyboard events test');
 
-// // Add a basic keyboard event listener
+// Add a basic keyboard event listener
 // document.addEventListener('keydown', function (e) {
 //     // Log the event object to see what we get
 //     console.log('Key pressed:', e.key);
@@ -194,48 +168,3 @@ Key Concepts:
 // modalEl.setAttribute('aria-modal', 'true');
 // btnCloseModalEl.setAttribute('aria-label', 'Close modal');
 
-// Final Verification
-
-// 'use strict';
-
-// // Selections
-// const modalEl = document.querySelector('.modal');
-// const overlayEl = document.querySelector('.overlay');
-// const btnCloseModalEl = document.querySelector('.close-modal');
-// const btnsOpenModalEl = document.querySelectorAll('.show-modal');
-
-// // Focus management
-// let lastFocusedButton = null;
-
-// // Helper functions
-// const openModal = function () {
-//   modalEl.classList.remove('hidden');
-//   overlayEl.classList.remove('hidden');
-//   modalEl.focus();
-//   lastFocusedButton = document.activeElement;
-// };
-
-// const closeModal = function () {
-//   modalEl.classList.add('hidden');
-//   overlayEl.classList.add('hidden');
-//   if (lastFocusedButton) {
-//     lastFocusedButton.focus();
-//   }
-// };
-
-// // Event listeners
-// btnsOpenModalEl.forEach(btn => btn.addEventListener('click', openModal));
-// btnCloseModalEl.addEventListener('click', closeModal);
-// overlayEl.addEventListener('click', closeModal);
-
-// // Keyboard events
-// document.addEventListener('keydown', function (e) {
-//   if (e.key === 'Escape' && !modalEl.classList.contains('hidden')) {
-//     closeModal();
-//   }
-// });
-
-// // Accessibility attributes
-// modalEl.setAttribute('role', 'dialog');
-// modalEl.setAttribute('aria-modal', 'true');
-// btnCloseModalEl.setAttribute('aria-label', 'Close modal');
